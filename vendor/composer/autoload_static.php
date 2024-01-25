@@ -4,24 +4,9 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc813a7b969b614073877f03940545cc1
+class ComposerStaticInitdc48de6130be6667af268e0c9a1ae767
 {
-    public static $files = array (
-        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
-        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '662a729f963d39afe703c9d9b7ab4a8c' => __DIR__ . '/..' . '/symfony/polyfill-php83/bootstrap.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
-        'S' => 
-        array (
-            'Symfony\\Polyfill\\Php83\\' => 23,
-            'Symfony\\Polyfill\\Php80\\' => 23,
-            'Symfony\\Polyfill\\Mbstring\\' => 26,
-            'Symfony\\Component\\Routing\\' => 26,
-            'Symfony\\Component\\HttpFoundation\\' => 33,
-        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -29,26 +14,6 @@ class ComposerStaticInitc813a7b969b614073877f03940545cc1
     );
 
     public static $prefixDirsPsr4 = array (
-        'Symfony\\Polyfill\\Php83\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php83',
-        ),
-        'Symfony\\Polyfill\\Php80\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
-        ),
-        'Symfony\\Polyfill\\Mbstring\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
-        ),
-        'Symfony\\Component\\Routing\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/routing',
-        ),
-        'Symfony\\Component\\HttpFoundation\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/http-foundation',
-        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -56,22 +21,20 @@ class ComposerStaticInitc813a7b969b614073877f03940545cc1
     );
 
     public static $classMap = array (
-        'App\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Controllers/OrderController.php',
+        'App\\Controllers\\DetailController' => __DIR__ . '/../..' . '/app/Controllers/DetailController.php',
+        'App\\Controllers\\OrderController' => __DIR__ . '/../..' . '/app/Controllers/OrderController.php',
+        'App\\Controllers\\PageController' => __DIR__ . '/../..' . '/app/Controllers/PageController.php',
         'App\\Models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
-        'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'App\\Router' => __DIR__ . '/../..' . '/app/Router.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
-        'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
-        'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
-        'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc813a7b969b614073877f03940545cc1::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc813a7b969b614073877f03940545cc1::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitc813a7b969b614073877f03940545cc1::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitdc48de6130be6667af268e0c9a1ae767::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitdc48de6130be6667af268e0c9a1ae767::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitdc48de6130be6667af268e0c9a1ae767::$classMap;
 
         }, null, ClassLoader::class);
     }
