@@ -1,5 +1,7 @@
-<!--信息填写首表 order tab 0-->
-<div class="orderTab">
+<!--此行仅为了注册一个名为kind记录服务类型的属性-->
+<input name="kind" style="display: none">
+<!--信息填写首表-->
+<div class="base">
     <label>联系方式(选择其一即可)</label><br>
     <p><input placeholder="邮箱：1234@example.com" type="email" name="email"></p>
     <p><input placeholder="移动电话：" type="text" name="mobile"></p>
@@ -13,7 +15,7 @@
 </div>
 <!--第二步-->
 <!--事业表-->
-<div class="orderTab">
+<div class="work">
     <br><label>事业/工作预测</label><br>
     <p>出生日期(实际的)<input type="date" id="datepicker" name="DOB" required></p>
     <P>你/他(她)的实际性别:<br>
@@ -43,7 +45,7 @@
     </p>
 </div>
 <!--学业表-->
-<div class="orderTab">
+<div class="study">
     <br><label>学业预测</label><br>
     <p>出生日期(实际的)<input type="date" id="datepicker" name="DOB" required></p>
     <P>你/他(她)的实际性别:<br>
@@ -71,7 +73,7 @@
     </p>
 </div>
 <!--婚姻表-->
-<div class="orderTab">
+<div class="marriage">
     <br><label>婚姻预测</label><br>
     <p>是否男女双方同问: <br>
         <label for="couple">双方同问</label><input type="radio" id="couple" value="false" name="single" onclick="setSingle(2)" required>
@@ -105,7 +107,7 @@
     </p>
 </div>
 <!--取名表-->
-<div class="orderTab">
+<div class="naming">
     <br><label>起/改名字</label><br>
     <p>起/改名字的对象:
         <select name="person" required>
@@ -129,7 +131,7 @@
 </div>
 <!--第三步-->
 <!--付款页索引-->
-<div class="orderTab">
+<div class="paying">
     <label for="channel">交易方式：</label><br>
     <p style="display: inline">
 
