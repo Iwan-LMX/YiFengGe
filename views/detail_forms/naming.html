@@ -1,0 +1,25 @@
+<body>
+    <!--取名表-->
+    <div class="orderTab">
+        <br><label>起/改名字</label><br>
+        <p>起/改名字的对象:
+            <select name="person" required>
+                <option value="me">自己</option>
+                <option value="child">孩子</option>
+                <option value="it">别人</option>
+            </select>
+        </p>
+        <p>出生日期(实际的)<input type="date" id="datepicker" name="DOB"></p>
+
+        <P>你/他(她)的实际性别:<br>
+            <label for="man">男</label><input type="radio" name="gender" id="man" value="true" >
+            <label for="man">女</label><input type="radio" name="gender" id="woman" value="false">
+        </P>
+        <p>姓氏</p><input type="text" id="surname" name="surname" required></p>
+        <br>
+        <p>命名要求:</p>
+        <p>
+            <input type="text" name="question" placeholder="想/不想 让用哪些字或者哪些音:">
+        </p>
+    </div>
+</body>

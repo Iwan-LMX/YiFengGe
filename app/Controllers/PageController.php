@@ -12,6 +12,8 @@ class PageController
     {
 //        $routeToOrder = (string) $routes->get('showOrder')->getPath();
         require_once APP_ROOT . '/views/home.php';
+
+
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $cipher = $_POST['cipher'];
             header("Location: ./detail/{$cipher}");

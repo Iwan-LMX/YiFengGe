@@ -104,7 +104,19 @@
 <body>
 <header style="position: center">填写信息</header>
 <section>
-
+    <!--信息填写首表 order tab 0-->
+    <div class="orderTab">
+        <label>联系方式(选择其一即可)</label><br>
+        <p><input placeholder="邮箱：1234@example.com" type="email" name="email"></p>
+        <p><input placeholder="移动电话：" type="text" name="mobile"></p>
+        <label for="description">测算类型:</label><br>
+        <div style="display: inherit">
+            <button type="button"  value="work" onclick="service('work')">事业/工作</button>
+            <button type="button"  value="study" onclick="service('study')">学业</button>
+            <button type="button"  value="marriage" onclick="service('marriage')">婚姻</button>
+            <button type="button"  value="naming" onclick="service('naming')">起名</button>
+        </div>
+    </div>
     <form id="regForm" method="post">
         <?php require_once APP_ROOT . '/views/detail_forms/order_base.php';?>
     </form>
