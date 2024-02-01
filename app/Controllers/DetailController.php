@@ -15,6 +15,6 @@ class DetailController
         // $id = (int)$cipher; //解密密文
         // $order->read($id); //查看用户订单的数据, 这里需要加上一个错误判断机制, 这是通过Models与数据库交互
 
-        require_once APP_ROOT . '/views/detail.php';  //调用显示order数据的php
+        require_once APP_ROOT . '/Views/detail.php';  //调用显示order数据的php
     }
 }

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.png">
+    <title>事业分析</title>
+    <link rel="stylesheet" href="/css/orderForm.css">
+<!--    this is because '/' is routed to public folder-->
+</head>
+<body>
+<section>
+    <form id="regForm" method="post">
+        <!--Step indicator-->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+        <!--事业表-->
+        <div class="orderTab">
+            <br><label>事业/工作预测</label><br>
+            <p>出生日期(实际的)<input type="date" id="datepicker" name="DOB" required></p>
+            <P>你/他(她)的实际性别:<br>
+                <label for="man">男</label><input type="radio" name="gender" id="man" value="true" required>
+                <labsel for="man">女</labsel><input type="radio" name="gender" id="woman" value="false">
+            </P>
+            <p>目前您的地理位置(实际的)</p><input type="text" name="position" required></p>
+            <p>请选一个数字:</p>
+            <p>
+                <input type="radio" id="1" name="yao" value="1" required>
+                <label for="1">1</label>
+                <input type="radio" id="2" name="yao" value="2">
+                <label for="2">2</label>
+                <input type="radio" id="3" name="yao" value="3">
+                <label for="3">3</label>
+                <input type="radio" id="4" name="yao" value="4">
+                <label for="4">4</label>
+                <input type="radio" id="5" name="yao" value="5">
+                <label for="5">5</label>
+                <input type="radio" id="6" name="yao" value="6">
+                <label for="6">6</label>
+            </p>
+            <br>
+            <p>问题描述:</p>
+            <p>
+                <input type="text" name="question" placeholder="我未来的财运 / 官运怎么样? 搞xxx生意能否顺利办成并得到收益?">
+            </p>
+        </div>
+        <!--联系方式-->
+        <div class="orderTab">
+            <label>联系方式(选择其一即可)</label><br>
+            <p><input placeholder="邮箱：1234@example.com" type="email" name="email"></p>
+            <p><input placeholder="移动电话：" type="text" name="mobile"></p>
+            </div>
+        </div>
+        <!--前后步导航栏-->
+        <div style="overflow:auto;">
+            <div style="float:right; display: flex;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
+    </form>
+</section>
+<script>
+    function requiredValidate() {
+        var T, inputs, input;
+
+        T = document.getElementsByClassName("orderTab");
+        inputs = T[currentTab].getElementsByTagName("input");//如果用type来分类进行检查应该也可以?
+        // A loop that checks every input field in the current tab:
+        for (input of inputs) {
+            // 检查必选项
+            if (!input.reportValidity()) return false;
+        }
+        return true;
+    }
+</script>
+<!--Below is outside script, be careful of the order-->
+<script type="text/javascript" src = "/js/order.js">
+</script>
+</body>
+</html>

@@ -21,3 +21,5 @@ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 if ($conn->connect_error) {
     die("未接入数据库，请等待管理员维护 " . $conn->connect_error);
 }
+
+//限制php访问范围

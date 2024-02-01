@@ -11,7 +11,7 @@ class PageController
     public function indexAction(RouteCollection $routes)
     {
 //        $routeToOrder = (string) $routes->get('showOrder')->getPath();
-        require_once APP_ROOT . '/views/home.php';
+        require_once APP_ROOT . '/app/Views/home.php';
 
 
         if($_SERVER["REQUEST_METHOD"] == "POST"){

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.png">
+    <title>婚姻分析</title>
+    <link rel="stylesheet" href="/css/orderForm.css"></head>
+<body>
+<section>
+    <form id="regForm" method="post">
+        <!--婚姻表-->
+        <div class="orderTab">
+            <br><label>婚姻预测</label><br>
+            <p>是否男女双方同问: <br>
+                <label for="couple">双方同问</label><input type="radio" id="couple" value="false" name="single" onclick="setSingle(2)" required>
+                <label for="single">仅自己</label><input type="radio" id="single" value="true" name="single" onclick="setSingle(1)">
+            </p>
+            <P>你的实际性别:<br>
+                <label for="man">男</label><input type="radio" name="gender" id="man" value="true" onclick="setGender(1)">
+                <label for="man">女</label><input type="radio" name="gender" id="woman" value="false" onclick="setGender(2)">
+            </P>
+            <p>男方出生日期(实际的)<input type="date" id="datepicker" name="DOB_M"  required></p>
+            <p>女方出生日期(实际的)<input type="date" id="datepicker" name="DOB_W"  required></p>
+            <p>请选一个数字:</p>
+            <p>
+                <input type="radio" id="1" name="yao" value="1" >
+                <label for="1">1</label>
+                <input type="radio" id="2" name="yao" value="2">
+                <label for="2">2</label>
+                <input type="radio" id="3" name="yao" value="3">
+                <label for="3">3</label>
+                <input type="radio" id="4" name="yao" value="4">
+                <label for="4">4</label>
+                <input type="radio" id="5" name="yao" value="5">
+                <label for="5">5</label>
+                <input type="radio" id="6" name="yao" value="6">
+                <label for="6">6</label>
+            </p>
+            <br>
+            <p>问题描述:</p>
+            <p>
+                <input type="text" name="question" placeholder="我未来婚姻状况怎么样? ; 我和目前的对象命局是否匹配? ;  我们准备要结婚了, 在什么时间下婚书, 结婚合适?">
+            </p>
+        </div>
+    </form>
+</section>
+</body>
+</html>

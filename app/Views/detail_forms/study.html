@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.png">
+    <title>学业分析</title>
+    <link rel="stylesheet" href="/css/orderForm.css">
+    <script src="./views/JavaScript/order.js"/>
+</head>
+<body>
+<section>
+    <form id="regForm" method="post">
+        <!--学业表-->
+        <div class="orderTab">
+            <br><label>学业预测</label><br>
+            <p>出生日期(实际的)<input type="date" id="datepicker" name="DOB" required></p>
+            <P>你/他(她)的实际性别:<br>
+                <label for="man">男</label><input type="radio" name="gender" id="man" value="true">
+                <label for="man">女</label><input type="radio" name="gender" id="woman" value="false">
+            </P>
+            <p>目前您的地理位置(实际的)</p><input type="text" name="position" required></p>
+            <p>请选一个数字:</p>
+            <p>
+                <input type="radio" id="1" name="yao" value="1" >
+                <label for="1">1</label>
+                <input type="radio" id="2" name="yao" value="2">
+                <label for="2">2</label>
+                <input type="radio" id="3" name="yao" value="3">
+                <label for="3">3</label>
+                <input type="radio" id="4" name="yao" value="4">
+                <label for="4">4</label>
+                <input type="radio" id="5" name="yao" value="5">
+                <label for="5">5</label>
+                <input type="radio" id="6" name="yao" value="6">
+                <label for="6">6</label>
+            </p>
+            <p>
+                <input type="text" name="question" placeholder="我未来学历更进一步. 我适不适合去xxx学校, 它位于我家的东/北xxx方位上.">
+            </p>
+        </div>
+
+    </form>
+</section>
+
+</body>
+</html>

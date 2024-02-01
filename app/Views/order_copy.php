@@ -103,7 +103,7 @@
 <header style="position: center">填写信息</header>
 <section>
     <form id="regForm">
-        <?php include APP_ROOT . '/views/detail_forms/order_base.php';?>
+        <?php include APP_ROOT . '/Views/detail_forms/order_base.php';?>
     </form>
 
 

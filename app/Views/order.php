@@ -118,7 +118,7 @@
         </div>
     </div>
     <form id="regForm" method="post">
-        <?php require_once APP_ROOT . '/views/detail_forms/order_base.php';?>
+        <?php require_once APP_ROOT . '/Views/detail_forms/order_base.php';?>
     </form>
 
     <a href="<?php echo $routes->get('homepage')->getPath(); ?>">返回首页</a>
@@ -126,7 +126,7 @@
 </section>
 <!--这个js是用来控制填写表单, 以及验证其合法性-->
 <script>
-    <?php require_once APP_ROOT . '/views/JavaScript/order.js'?>
+    <?php require_once APP_ROOT . '/Views/js/order.js'?>
 </script>
 </body>
 

@@ -10,7 +10,7 @@ use Symfony\Component\Routing\RouteCollection;
 class OrderController
 {
     public function workOrder(RouteCollection $routes){
-        require_once APP_ROOT . '/views/detail_forms/work.html';
+        require_once APP_ROOT . '/app/Views/detail_forms/work.html';
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $email  = $this->test_input($_POST["email"]);
             $mobile  = $this->test_input($_POST["mobile"]);
@@ -18,7 +18,7 @@ class OrderController
 
     }
     public function studyOrder(RouteCollection $routes){
-        require_once APP_ROOT . '/views/detail_forms/study.html';
+        require_once APP_ROOT . '/app/Views/detail_forms/study.html';
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $email  = $this->test_input($_POST["email"]);
             $mobile  = $this->test_input($_POST["mobile"]);
@@ -26,7 +26,7 @@ class OrderController
 
     }
     public function marriageOrder(RouteCollection $routes){
-        require_once APP_ROOT . '/views/detail_forms/marriage.html';
+        require_once APP_ROOT . '/app/Views/detail_forms/marriage.html';
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $email  = $this->test_input($_POST["email"]);
             $mobile  = $this->test_input($_POST["mobile"]);
@@ -34,7 +34,7 @@ class OrderController
 
     }
     public function namingOrder(RouteCollection $routes){
-        require_once APP_ROOT . '/views/detail_forms/naming.html';
+        require_once APP_ROOT . 'app/Views/detail_forms/naming.html';
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $email  = $this->test_input($_POST["email"]);
             $mobile  = $this->test_input($_POST["mobile"]);
