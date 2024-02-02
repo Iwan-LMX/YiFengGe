@@ -10,23 +10,29 @@
     <link rel="shortcut icon" href="favicon.png">
     <title>学业分析</title>
     <link rel="stylesheet" href="/css/orderForm.css">
-    <script src="./views/JavaScript/order.js"/>
 </head>
 <body>
 <section>
     <form id="regForm" method="post">
+        <!--Step indicator-->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
         <!--学业表-->
         <div class="orderTab">
             <br><label>学业预测</label><br>
             <p>出生日期(实际的)<input type="date" id="datepicker" name="DOB" required></p>
             <P>你/他(她)的实际性别:<br>
-                <label for="man">男</label><input type="radio" name="gender" id="man" value="true">
+                <label for="man">男</label><input type="radio" name="gender" id="man" value="true" required>
                 <label for="man">女</label><input type="radio" name="gender" id="woman" value="false">
             </P>
             <p>目前您的地理位置(实际的)</p><input type="text" name="position" required></p>
             <p>请选一个数字:</p>
             <p>
-                <input type="radio" id="1" name="yao" value="1" >
+                <input type="radio" id="1" name="yao" value="1" required>
                 <label for="1">1</label>
                 <input type="radio" id="2" name="yao" value="2">
                 <label for="2">2</label>
@@ -43,9 +49,37 @@
                 <input type="text" name="question" placeholder="我未来学历更进一步. 我适不适合去xxx学校, 它位于我家的东/北xxx方位上.">
             </p>
         </div>
-
+        <!--联系方式-->
+        <div class="orderTab">
+            <label>联系方式(选择其一即可)</label><br>
+            <p><input placeholder="邮箱：1234@example.com" type="email" name="email"> <label style="color: red"></label></p>
+            <p><input placeholder="移动电话：" type="text" name="mobile"> <label style="color: red"></label></p>
+        </div>
+        <!--前后步导航栏-->
+        <div style="overflow:auto;">
+            <div style="float:right; display: flex;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
     </form>
 </section>
-
+<script>
+    function requiredValidate() {
+        var T, inputs, input;
+        if(currentTab == 0){
+            T = document.getElementsByClassName("orderTab");
+            inputs = T[currentTab].getElementsByTagName("input");
+            // A loop that checks every input field in the current tab:
+            for (input of inputs) {
+                // 检查必选项
+                if (!input.reportValidity()) return false;
+            }
+        }
+        return true;
+    }
+</script>
+<!--Below is outside script, be careful of the order-->
+<script type="text/javascript" src = "/js/order.js"></script>
 </body>
 </html>

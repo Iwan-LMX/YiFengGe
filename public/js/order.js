@@ -43,7 +43,6 @@ function nextPrev(n) {
         //Check contact before Submit the form
         if(!ContactValidate()) return false;
         document.getElementById("regForm").submit();
-
         // next is payment process
         return true;
     }
@@ -63,48 +62,35 @@ function nextPrev(n) {
 function ContactValidate() {
     var T = document.getElementsByClassName("orderTab");
     var inputs = T[currentTab].getElementsByTagName("input");
-    for(i of inputs)
-        i.className = "";
+    var email = inputs[0], mobile = inputs[1];
+    email.className = "";  mobile.className ="";
+    var labels = T[currentTab].getElementsByTagName("label");
+    labels[1].innerText = labels[2].innerText = "";
+    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    var mobilePattern = /^1[3456789]\d{9}$/;
+
     // 验证emial和mobile至少其一有合法输入
-    if (inputs[0].value == "" && inputs[1].value == "") {
-        inputs[0].className += "invalid";
-        inputs[1].className += "invalid";
+    if (email.value == "" && mobile.value == "") {
+        email.className += "invalid";
+        mobile.className += "invalid";
+        labels[1].innerText = "请至少选择一种联系方式填写!"
         return false;
-    } else if (inputs[1].value == "") {
-        var email = document.getElementsByName("email");
-        var pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-        if (!email[0].value.match(pattern)) {
-            inputs[0].className += "invalid";
-            return false;
-        }
-    } else if (inputs[0].value == "") {
-        var mobile = document.getElementsByName("mobile");
-        var pattern = /^1[3456789]\d{9}$/;
-        if (!mobile[0].value.match(pattern)) {
-            inputs[1].className += "invalid";
-            return false;
-        }
     }
+    if (email.value != "" && !email.value.match(emailPattern)) {
+        email.className += "invalid";
+        labels[1].innerText = "请检查邮箱格式!";
+        return false;
+    }
+    if (mobile.value != "" && !mobile.value.match(mobilePattern)) {
+        inputs[1].className += "invalid";
+        labels[2].innerText = "请检查电话格式!";
+        return false;
+    }
+
     return true;
 }
 
 
-function setSingle(value) {
-    single = value;
-    if(gender != 0) setGender(0);
-}
-function setGender(value){
-    if(value != 0) gender = value;
-    document.getElementsByName("DOB_M")[0].disabled = false;
-    document.getElementsByName("DOB_W")[0].disabled = false;
-    if (single == 1)
-        if(gender == 1){
-            //男性
-            document.getElementsByName("DOB_W")[0].disabled = true;
-        }else{
-            document.getElementsByName("DOB_M")[0].disabled = true;
-        }
-}
 function service(tab) {
     // Exit the function if any field in the current tab is invalid:
     if (!validateForm()) return false;
@@ -113,19 +99,6 @@ function service(tab) {
     T[0].style.display = "none";
     secondPage = currentPage = tab;
     showTab(currentPage);
-}
-
-
-
-
-function showDOB_MW() {
-    var y1 = document.getElementsByName("DOB_M")[0];
-    var y2 = document.getElementsByName("DOB_W")[0];
-    if (y1.value == "" && y2.value == "") {
-        y1.dispatchEvent(new Event("invalid"));
-        y1.reportValidity();
-        return false
-    } else return true;
 }
 
 

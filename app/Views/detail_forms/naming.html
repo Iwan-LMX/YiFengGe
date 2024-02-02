@@ -14,6 +14,13 @@
 <body>
 <section>
     <form id="regForm" method="post">
+        <!--Step indicator-->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
         <!--取名表-->
         <div class="orderTab">
             <br><label>起/改名字</label><br>
@@ -37,8 +44,38 @@
                 <input type="text" name="question" placeholder="想/不想 让用哪些字或者哪些音:">
             </p>
         </div>
-
+        <!--联系方式-->
+        <div class="orderTab">
+            <label>联系方式(选择其一即可)</label><br>
+            <p><input placeholder="邮箱：1234@example.com" type="email" name="email"> <label style="color: red"></label></p>
+            <p><input placeholder="移动电话：" type="text" name="mobile"> <label style="color: red"></label></p>
+        </div>
+        <!--前后步导航栏-->
+        <div style="overflow:auto;">
+            <div style="float:right; display: flex;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
     </form>
 </section>
+<script>
+    function requiredValidate() {
+        var T, inputs, input;
+        if(currentTab == 0){
+            T = document.getElementsByClassName("orderTab");
+            inputs = T[currentTab].getElementsByTagName("input");
+            // A loop that checks every input field in the current tab:
+            for (input of inputs) {
+                // 检查必选项
+                if (!input.reportValidity()) return false;
+            }
+        }
+        return true;
+    }
+</script>
+<!--Below is outside script, be careful of the order-->
+<script type="text/javascript" src = "/js/order.js"></script>
+
 </body>
 </html>

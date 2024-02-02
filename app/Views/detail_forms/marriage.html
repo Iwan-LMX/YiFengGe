@@ -13,12 +13,19 @@
 <body>
 <section>
     <form id="regForm" method="post">
+        <!--Step indicator-->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
         <!--婚姻表-->
         <div class="orderTab">
             <br><label>婚姻预测</label><br>
             <p>是否男女双方同问: <br>
-                <label for="couple">双方同问</label><input type="radio" id="couple" value="false" name="single" onclick="setSingle(2)" required>
-                <label for="single">仅自己</label><input type="radio" id="single" value="true" name="single" onclick="setSingle(1)">
+                <label for="couple">双方同问</label><input type="radio" id="couple" value="false" name="single" onclick="setSingle(false)" required>
+                <label for="single">仅自己</label><input type="radio" id="single" value="true" name="single" onclick="setSingle(true)">
             </p>
             <P>你的实际性别:<br>
                 <label for="man">男</label><input type="radio" name="gender" id="man" value="true" onclick="setGender(1)">
@@ -47,7 +54,61 @@
                 <input type="text" name="question" placeholder="我未来婚姻状况怎么样? ; 我和目前的对象命局是否匹配? ;  我们准备要结婚了, 在什么时间下婚书, 结婚合适?">
             </p>
         </div>
+        <!--联系方式-->
+        <div class="orderTab">
+            <label>联系方式(选择其一即可)</label><br>
+            <p><input placeholder="邮箱：1234@example.com" type="email" name="email"> <label style="color: red"></label></p>
+            <p><input placeholder="移动电话：" type="text" name="mobile"> <label style="color: red"></label></p>
+        </div>
+        <!--前后步导航栏-->
+        <div style="overflow:auto;">
+            <div style="float:right; display: flex;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
     </form>
 </section>
+<script>
+    function requiredValidate() {
+        var T, inputs, input;
+        if(currentTab == 0){
+            T = document.getElementsByClassName("orderTab");
+            inputs = T[currentTab].getElementsByTagName("input");
+            // A loop that checks every input field in the current tab:
+            for (input of inputs) {
+                // 检查必选项
+                if (!input.reportValidity()) return false;
+            }
+        }
+        return true;
+    }
+    //gender will affect man and woman DOB inputs
+    var single = false, gender = 0;
+    function setSingle(value) {
+        single = value;
+        if(gender != 0) setGender(0);
+    }
+    function setGender(value){
+        if(value != 0) gender = value;
+        var man = document.getElementsByName("DOB_M")[0];
+        man.disabled = false;
+
+        var woman = document.getElementsByName("DOB_W")[0];
+        woman.disabled = false;
+        if (single == 1)
+            if(gender == 1){
+                //男性
+                woman.disabled = true;
+                woman.value = woman.defaultValue;
+            }else{
+                man.disabled = true;
+                man.value = man.defaultValue;
+            }
+    }
+
+</script>
+<!--Below is outside script, be careful of the order-->
+<script type="text/javascript" src = "/js/order.js"></script>
 </body>
 </html>
