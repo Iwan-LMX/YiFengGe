@@ -29,13 +29,13 @@
             </p>
             <P>你的实际性别:<br>
                 <label for="man">男</label><input type="radio" name="gender" id="man" value="true" onclick="setGender(1)">
-                <label for="man">女</label><input type="radio" name="gender" id="woman" value="false" onclick="setGender(2)">
+                <label for="woman">女</label><input type="radio" name="gender" id="woman" value="false" onclick="setGender(2)">
             </P>
-            <p>男方出生日期(实际的)<input type="date" id="datepicker" name="DOB_M"  required></p>
-            <p>女方出生日期(实际的)<input type="date" id="datepicker" name="DOB_W"  required></p>
+            <p>男方出生日期(实际的)<input type="date" name="DOB_M"  required></p>
+            <p>女方出生日期(实际的)<input type="date" name="DOB_W"  required></p>
             <p>请选一个数字:</p>
             <p>
-                <input type="radio" id="1" name="yao" value="1" >
+                <input type="radio" id="1" name="yao" value="1" required>
                 <label for="1">1</label>
                 <input type="radio" id="2" name="yao" value="2">
                 <label for="2">2</label>
@@ -57,8 +57,8 @@
         <!--联系方式-->
         <div class="orderTab">
             <label>联系方式(选择其一即可)</label><br>
-            <p><input placeholder="邮箱：1234@example.com" type="email" name="email"> <label style="color: red"></label></p>
-            <p><input placeholder="移动电话：" type="text" name="mobile"> <label style="color: red"></label></p>
+            <p><input placeholder="邮箱：1234@example.com" type="email" name="email"></p>
+            <p><input placeholder="移动电话：" type="text" name="mobile"></p>
         </div>
         <!--前后步导航栏-->
         <div style="overflow:auto;">
@@ -70,31 +70,18 @@
     </form>
 </section>
 <script>
-    function requiredValidate() {
-        var T, inputs, input;
-        if(currentTab == 0){
-            T = document.getElementsByClassName("orderTab");
-            inputs = T[currentTab].getElementsByTagName("input");
-            // A loop that checks every input field in the current tab:
-            for (input of inputs) {
-                // 检查必选项
-                if (!input.reportValidity()) return false;
-            }
-        }
-        return true;
-    }
     //gender will affect man and woman DOB inputs
-    var single = false, gender = 0;
+    let single = false, gender = 0;
     function setSingle(value) {
         single = value;
         if(gender != 0) setGender(0);
     }
     function setGender(value){
         if(value != 0) gender = value;
-        var man = document.getElementsByName("DOB_M")[0];
+        let man = document.getElementsByName("DOB_M")[0];
         man.disabled = false;
 
-        var woman = document.getElementsByName("DOB_W")[0];
+        let woman = document.getElementsByName("DOB_W")[0];
         woman.disabled = false;
         if (single == 1)
             if(gender == 1){
@@ -106,7 +93,6 @@
                 man.value = man.defaultValue;
             }
     }
-
 </script>
 <!--Below is outside script, be careful of the order-->
 <script type="text/javascript" src = "/js/order.js"></script>

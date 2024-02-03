@@ -27,8 +27,8 @@
             <br><label>事业/工作预测</label><br>
             <p>出生日期(实际的)<input type="date" id="datepicker" name="DOB" required></p>
             <P>你/他(她)的实际性别:<br>
-                <label for="man">男</label><input type="radio" name="gender" id="man" value="true" required>
-                <labsel for="man">女</labsel><input type="radio" name="gender" id="woman" value="false">
+                <label for="man">男</label><input type="radio" name="gender" id="man" value=true required>
+                <label for="woman">女</label><input type="radio" name="gender" id="woman" value=false>
             </P>
             <p>目前您的地理位置(实际的)</p><input type="text" name="position" required></p>
             <p>请选一个数字:</p>
@@ -55,8 +55,8 @@
         <!--联系方式-->
         <div class="orderTab">
             <label>联系方式(选择其一即可)</label><br>
-            <p><input placeholder="邮箱：1234@example.com" type="email" name="email"> <label style="color: red"></label></p>
-            <p><input placeholder="移动电话：" type="text" name="mobile"> <label style="color: red"></label></p>
+            <p><input placeholder="邮箱：1234@example.com" type="email" name="email"></p>
+            <p><input placeholder="移动电话：" type="text" name="mobile"></p>
         </div>
         <!--前后步导航栏-->
         <div style="overflow:auto;">
@@ -68,19 +68,6 @@
     </form>
 </section>
 <script>
-    function requiredValidate() {
-        var T, inputs, input;
-        if(currentTab == 0){
-            T = document.getElementsByClassName("orderTab");
-            inputs = T[currentTab].getElementsByTagName("input");
-            // A loop that checks every input field in the current tab:
-            for (input of inputs) {
-                // 检查必选项
-                if (!input.reportValidity()) return false;
-            }
-        }
-        return true;
-    }
 </script>
 <!--Below is outside script, be careful of the order-->
 <script type="text/javascript" src = "/js/order.js"></script>

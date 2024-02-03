@@ -34,7 +34,7 @@ class OrderController
 
     }
     public function namingOrder(RouteCollection $routes){
-        require_once APP_ROOT . 'app/Views/detail_forms/naming.html';
+        require_once APP_ROOT . '/app/Views/detail_forms/naming.html';
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $email  = $this->test_input($_POST["email"]);
             $mobile  = $this->test_input($_POST["mobile"]);
