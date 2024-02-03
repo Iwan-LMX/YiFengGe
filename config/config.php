@@ -14,12 +14,5 @@ define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'yifengge');
 
-// 创建连接
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-// 检测连接
-if ($conn->connect_error) {
-    die("未接入数据库，请等待管理员维护 " . $conn->connect_error);
-}
 
 //限制php访问范围

@@ -2,6 +2,9 @@
 //和数据库交互用于生成和记录用户的订单
 namespace App\Models;
 class Order{
+//------------------------------------------------------------------//
+//----------------------变量声明 -- 对应数据库属性----------------------//
+//------------------------------------------------------------------//
     protected $id;//本系统标志
     protected $cipher;//加密代码
     protected $email; //邮箱
@@ -10,11 +13,34 @@ class Order{
     protected $channel; //交易渠道
     protected $transaction; //交易号
     protected $description; //所需服务描述
-    protected $service; //订单状态
+    protected $status; //订单状态
     protected $work_id;
     protected $study_id;
     protected $marriage_id;
     protected $naming_id;
+//------------------------------------------------------------------//
+//------------------CRUD OPERATIONS 模型对数据库操作-------------------//
+//------------------------------------------------------------------//
+    public function parentCreat(array $data) //插入数据
+    {
+        require_once APP_ROOT;
+    }
+
+    public function parentRead(int $id)
+    {
+
+    }
+
+    public function parentUpdate(int $id, array $data)
+    {
+
+    }
+
+    public function parentDelete(int $id)
+    {
+
+    }
+
 
 //获取值methods 和设置值
     public function getId()
@@ -49,9 +75,9 @@ class Order{
     {
         return $this->description;
     }
-    public function getService()
+    public function getStatus()
     {
-        return $this->service;
+        return $this->status;
     }
     public function getWorkId()
     {
@@ -99,9 +125,9 @@ class Order{
     {
         $this->description = $description;
     }
-    public function setService(string $service)
+    public function setStatus(string $status)
     {
-        $this->service = $service;
+        $this->status = $status;
     }
     public function setWorkId(int $work_id)
     {
@@ -118,29 +144,5 @@ class Order{
     public function setNamingId(string $naming_id)
     {
         $this->naming_id = $naming_id;
-    }
-
-
-
-
-// CRUD OPERATIONS 模型对数据库操作
-    public function create(array $data) //插入数据
-    {
-        require_once APP_ROOT
-    }
-
-    public function read(int $id)
-    {
-
-    }
-
-    public function update(int $id, array $data)
-    {
-
-    }
-
-    public function delete(int $id)
-    {
-
     }
 }
