@@ -26,16 +26,16 @@
             <br><label>起/改名字</label><br>
             <p>起/改名字的对象:
                 <select name="person">
-                    <option value="me">自己</option>
+                    <option value="self">自己</option>
                     <option value="child" selected>孩子</option>
-                    <option value="it">别人</option>
+                    <option value="other">别人</option>
                 </select>
             </p>
-            <p>出生日期(实际的)<input type="date" id="datepicker" name="DOB" required></p>
+            <p>出生日期(实际的)<input type="date" id="datetime-local" name="DOB" required></p>
 
             <P>你/他(她)的实际性别:<br>
-                <label for="man">男</label><input type="radio" name="gender" id="man" value=true required>
-                <label for="woman">女</label><input type="radio" name="gender" id="woman" value=false>
+                <label for="man">男</label><input type="radio" name="gender" id="man" value=1 required>
+                <label for="woman">女</label><input type="radio" name="gender" id="woman" value=0>
             </P>
             <p>姓氏</p><input type="text" id="surname" name="surname" required></p>
             <br>

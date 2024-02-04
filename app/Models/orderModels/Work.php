@@ -3,7 +3,7 @@
 namespace App\Models\orderModels;
 use App\Models\Order;
 
-class work extends Order
+class Work extends Order
 {
 //------------------------------------------------------------------//
 //----------------------变量声明 -- 对应数据库属性----------------------//

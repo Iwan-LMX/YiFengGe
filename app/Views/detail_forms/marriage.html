@@ -24,15 +24,15 @@
         <div class="orderTab">
             <br><label>婚姻预测</label><br>
             <p>是否男女双方同问: <br>
-                <label for="couple">双方同问</label><input type="radio" id="couple" value="false" name="single" onclick="setSingle(false)" required>
-                <label for="single">仅自己</label><input type="radio" id="single" value="true" name="single" onclick="setSingle(true)">
+                <label for="couple">双方同问</label><input type="radio" id="couple" value=0 name="single" onclick="setSingle(false)" required>
+                <label for="single">仅自己</label><input type="radio" id="single" value=1 name="single" onclick="setSingle(true)">
             </p>
             <P>你的实际性别:<br>
-                <label for="man">男</label><input type="radio" name="gender" id="man" value="true" onclick="setGender(1)">
-                <label for="woman">女</label><input type="radio" name="gender" id="woman" value="false" onclick="setGender(2)">
+                <label for="man">男</label><input type="radio" name="gender" id="man" value=1 onclick="setGender(1)">
+                <label for="woman">女</label><input type="radio" name="gender" id="woman" value=0 onclick="setGender(2)">
             </P>
-            <p>男方出生日期(实际的)<input type="date" name="DOB_M"  required></p>
-            <p>女方出生日期(实际的)<input type="date" name="DOB_W"  required></p>
+            <p>男方出生日期(实际的)<input type="datetime-local" name="DOB_M"  required></p>
+            <p>女方出生日期(实际的)<input type="datetime-local" name="DOB_W"  required></p>
             <p>请选一个数字:</p>
             <p>
                 <input type="radio" id="1" name="yao" value="1" required>
